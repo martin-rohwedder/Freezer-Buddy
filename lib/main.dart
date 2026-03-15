@@ -9,10 +9,30 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Freezer Buddy Application'),
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'Freezer Buddy',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            ),
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.ac_unit_sharp), text: 'Freezer'),
+                Tab(icon: Icon(Icons.add_circle_sharp), text: 'Add Item'),
+                Tab(icon: Icon(Icons.settings_sharp), text: 'Settings'),
+              ],
+            ),
+          ),
+          body: const TabBarView(
+            children: [
+              Center(child: Text('Freezer Screen')),
+              Center(child: Text('Add Item Screen')),
+              Center(child: Text('Settings Screen')),
+            ],
+          ),
         ),
       ),
     );
