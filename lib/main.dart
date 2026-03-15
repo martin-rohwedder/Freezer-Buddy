@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'screens/freezer_screen.dart';
+import 'screens/add_item_screen.dart';
+import 'screens/settings_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -27,11 +30,7 @@ class MainApp extends StatelessWidget {
             ),
           ),
           body: const TabBarView(
-            children: [
-              Center(child: Text('Freezer Screen')),
-              Center(child: Text('Add Item Screen')),
-              Center(child: Text('Settings Screen')),
-            ],
+            children: [FreezerScreen(), AddItemScreen(), SettingsScreen()],
           ),
         ),
       ),
